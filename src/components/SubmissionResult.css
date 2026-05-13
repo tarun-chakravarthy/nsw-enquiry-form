@@ -1,0 +1,139 @@
+.submission-result-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.success-message {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  border: 1px solid #b1dfbb;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.success-message h2 {
+  color: #155724;
+  font-size: 24px;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.success-message p {
+  color: #0c5460;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.submitted-data {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.submitted-data h3 {
+  color: #1a1a1a;
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.data-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.data-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 15px;
+  align-items: start;
+}
+
+.data-item label {
+  font-weight: 600;
+  color: #333333;
+  font-size: 14px;
+}
+
+.data-item span {
+  color: #666666;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.message-text {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.data-item.full-width {
+  grid-template-columns: 1fr;
+}
+
+.data-item.full-width label {
+  margin-bottom: 8px;
+}
+
+.new-enquiry-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.new-enquiry-button:hover {
+  background-color: #0052a3;
+}
+
+.new-enquiry-button:active {
+  background-color: #003d7a;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .submission-result-container {
+    padding: 20px 10px;
+  }
+
+  .submitted-data {
+    padding: 20px;
+  }
+
+  .success-message {
+    padding: 20px;
+  }
+
+  .success-message h2 {
+    font-size: 20px;
+  }
+
+  .data-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .data-item label {
+    font-weight: 600;
+    color: #666666;
+  }
+
+  .data-item span {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #0066cc;
+  }
+}
