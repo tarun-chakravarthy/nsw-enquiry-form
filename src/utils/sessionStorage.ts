@@ -1,9 +1,10 @@
 /**
  * Session Storage Utilities
- * See: STORAGE_STRATEGY.md for detailed justification
+ * Stores form draft data to resume incomplete enquiries
+ * Note: Key must match interview prep specification
  */
 
-const SESSION_KEY = 'enquiry_form_state';
+const SESSION_KEY = 'rnsw_enquiry_draft';
 
 interface EnquiryState {
   formData: {
@@ -35,7 +36,9 @@ export const loadFromSession = (): Partial<EnquiryState> | null => {
     const data = sessionStorage.getItem(SESSION_KEY);
     if (!data) return null;
     const parsed = JSON.parse(data);
-    return parsed?.formData ? parsed : null;
+    // Only restore formData, not isSubmitted
+    // Rationale: Refreshing the confirmation screen should restart the form
+    return parsed?.formData ? { formData: parsed.formData, submittedData: parsed.submittedData, isSubmitted: false } : null;
   } catch (error) {
     console.error('Failed to load form:', error);
     return null;

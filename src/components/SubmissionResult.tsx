@@ -183,6 +183,7 @@ export default function SubmissionResult() {
             <strong>Enquiry Reference:</strong>
           </p>
           <p className="text-lg font-mono text-primary-600">
+            {/* Reference: Date-RandomID format. In production, this would be generated server-side */}
             {new Date().toISOString().split('T')[0]}-{Math.random().toString(36).substr(2, 9).toUpperCase()}
           </p>
         </div>
