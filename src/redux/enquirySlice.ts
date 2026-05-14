@@ -1,6 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState = {
+interface FormData {
+  fullName: string;
+  email: string;
+  phone: string;
+  enquiryType: string;
+  message: string;
+}
+
+interface EnquiryState {
+  formData: FormData;
+  submittedData: FormData | null;
+  isSubmitted: boolean;
+}
+
+const initialState: EnquiryState = {
   formData: {
     fullName: '',
     email: '',
@@ -16,7 +30,7 @@ const enquirySlice = createSlice({
   name: 'enquiry',
   initialState,
   reducers: {
-    updateFormData: (state, action) => {
+    updateFormData: (state, action: PayloadAction<Partial<FormData>>) => {
       state.formData = {
         ...state.formData,
         ...action.payload,
@@ -30,7 +44,7 @@ const enquirySlice = createSlice({
       state.formData = initialState.formData;
       state.isSubmitted = false;
     },
-    loadFromSession: (state, action) => {
+    loadFromSession: (state, action: PayloadAction<Partial<EnquiryState>>) => {
       state.formData = action.payload.formData || initialState.formData;
       state.submittedData = action.payload.submittedData || null;
       state.isSubmitted = action.payload.isSubmitted || false;
