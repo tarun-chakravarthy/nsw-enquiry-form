@@ -1,3 +1,4 @@
+import { FiCheckCircle, FiPlus, FiPrinter } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetForm } from '../redux/enquirySlice';
 import { clearSession } from '../utils/sessionStorage';
@@ -25,20 +26,8 @@ export default function SubmissionResult() {
         {/* Success Banner */}
         <div className="bg-gradient-to-r from-success-50 to-success-100 border border-success-200 rounded-lg p-6 sm:p-8 mb-8 shadow-sm">
           <div className="flex gap-4">
-            <div className="flex-shrink-0">
-              <svg
-                className="w-6 h-6 text-success-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+            <div className="shrink-0">
+              <FiCheckCircle className="w-6 h-6 text-success-600" />
             </div>
             <div className="flex-1">
               <h2 className="text-2xl font-bold text-success-900 mb-2">
@@ -138,19 +127,7 @@ export default function SubmissionResult() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <button onClick={handleNewEnquiry} className="btn-primary">
             <span className="flex items-center justify-center gap-2">
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 4v16m8-8H4"
-                />
-              </svg>
+              <FiPlus className="w-5 h-5" />
               New Enquiry
             </span>
           </button>
@@ -159,19 +136,7 @@ export default function SubmissionResult() {
             className="btn-secondary"
           >
             <span className="flex items-center justify-center gap-2">
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4H7a2 2 0 01-2-2v-4a2 2 0 012-2h10a2 2 0 012 2v4a2 2 0 01-2 2zm0 0h6v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                />
-              </svg>
+              <FiPrinter className="w-5 h-5" />
               Print Details
             </span>
           </button>
